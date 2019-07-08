@@ -37,4 +37,4 @@ used to unknown number of parameters
             System.out.println(" args " + i + ": " + v[i]);
     }
 
-**note** that var
+**NOTE** that varargs is operated as an array
