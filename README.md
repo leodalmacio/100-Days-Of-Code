@@ -38,3 +38,30 @@ used to unknown number of parameters
     }
 
 **NOTE** that varargs is operated as an array
+
+## Day 2
+
+### Superclass = Subclass
+    I've learned that subclass and super class works somehow the same as interface
+    Where in you can declare
+    SuperClass sc = new SuperClass();
+    SubClass sb = new SubClass();
+    sc = sb;
+    but the super class can't access variables/methods that are specific only to the subclass.
+
+### Access Modifier
+                    | highest precedence <---------> lowest precedence
+    *———————————————+———————————————+———————————+———————————————+———————
+    \ xCanBeSeenBy  | this          | any class | this subclass | any
+    \__________     | class         | in same   | in another    | class
+                \   | nonsubbed     | package   | package       |    
+    Modifier of x \ |               |           |               |       
+    ————————————————*———————————————+———————————+———————————————+———————
+    public          |       ✔       |     ✔     |       ✔       |   ✔   
+    ————————————————+———————————————+———————————+———————————————+———————
+    protected       |       ✔       |     ✔     |       ✔       |   ✘   
+    ————————————————+———————————————+———————————+———————————————+———————
+    package-private |               |           |               |
+    (no modifier)   |       ✔       |     ✔     |       ✘       |   ✘   
+    ————————————————+———————————————+———————————+———————————————+———————
+    private         |       ✔       |     ✘     |       ✘       |   ✘   
