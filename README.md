@@ -1,4 +1,178 @@
-# 100-Days-Of-Code
+# 100-Days-Of-Code ATTEMPT 2
+-- Introspect for a bit on what ways we can do to improve our previous attempt
+
+1. Always leave a time to study, either after waking up, or going early on work, or on lunch break.
+2. Don't overwork yourself.
+3. Every Saturday(except the first week and first month), create an outline on what you want to finish/learn for this week, and set a major goal for the month.
+4. No matter what, learn something first before lazing around.
+5. Always commit what you learn, before leaving work, either it's done or not, so you can continue at home if ever.
+
+So, for now that's what I can think about, so good luck with the second attempt.
+
+
+## Month 1 (July 24, 2019 - Aug. 22, 2019)
+---
+*__Goals__*
+1. Finish the Beginners Java book
+
+ 
+
+### Week 1 (July 24, 2019 - July 30, 2019)
+---
+*__Goals__*
+1. Learn and create a Multithreaded Program
+2. Study Enumarations, Autoboxing, Static Import, and Annotations
+
+ 
+
+#### Day 1 (July 24, 2019 - Wed)
+---
+**<u>Process-based vs Thread-based MULTITASKING</u>**
+
+* __Process-based multitasking__
+    > * the feature that allows a computer to run multiple programs concurrently.
+    > * Smallest unit is a program.
+
+* __Thread-based multitasking__
+    > * allows a SINGLE programs to to perform multiple task, such as a text editor can be formatting a text at the same time that it is printing.
+    > * Thread is the smallest unit of dispatchable code.
+
+**<u>Thread Class and Runnable Interface(Creating threads in Java)</u>**
+
+**NOTE** All process have atleast one thread of execution. Including the main method, which have the main thread of the program.
+
+
+Both Thread and Runnable is packaged on **java.lang**.
+
+Thread Class implements Runnable Interface
+
+Using Runnable Interface, the run method needs to be implemented.
+Just implement what you want the thread to do when it starts running inside the run method.
+
+After that create a Thread Class that would accept the superclass that implements the run method.
+
+Then use the start method of the thread class that would execute the run method that was implemented.
+
+The example here uses the thread inside the class where Runnable is implemented, but it doesn't have to be.
+```java
+
+class MyThread implements Runnable {
+    private Thread thread;
+
+    // Construct a new thread and give it a name
+    private MyThread(String name) {
+        thread = new Thread(this, name);
+    }
+
+    public static MyThread createAndStart(String name) {
+        MyThread myThread = new MyThread(name);
+
+        myThread.thread.start(); // start the thread
+        return myThread;
+    }
+
+    // abstract method of Runnale Interface
+    // Entry point of thread
+    public void run() {
+        System.out.println(thread.getName() + " starting.");
+        try {
+            for (int i = 0; i < 10; i++) {
+                Thread.sleep(400);
+                System.out.println("In " + thread.getName() + ", count is " + i);
+            }
+        } catch (InterruptedException e) {
+            System.out.println(thread.getName() + " interrupted.");
+        }
+
+        System.out.println(thread.getName() + " terminating.");
+    }
+}
+
+class ThreadVariations {
+    public static void main (String args[]) {
+        System.out.println("Main Thread starting");
+
+        //First, construct a MyThread Object.
+        MyThread mt = MyThread.createAndStart("Child #1");
+
+        for(int i = 0; i < 50; i++) {
+            System.out.print(".");
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException exc) {
+                System.out.println("Main thread interrupted.");
+            }
+        }
+
+        System.out.println("Main thread ending.");
+    }
+}
+
+```
+
+When using Thread Class, you would still need to provide implementation
+for the run method();
+
+**<u>Determining when a thread ends</u>**
+* isAlive()
+    * used to check is thread is still alive
+* join()
+    * a another way to wait for the child thread to finish
+    * the idea is when the child threads can finally join to the parent thread
+
+**<u>Setting Thread Priority</u>**
+
+
+
+
+
+### Week 2
+*Objectives*
+1. Learn Generics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Week 3
+*Objectives*
+1. Lambda Expressions and Method References
+2. Modules
+
+
+
+
+
+
+
+
+
+
+### Week 4
+1. Swings? Still not sure
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 100-Days-Of-Code ATTEMPT 1(FAILED)
 
 ## Day 1
 For this day I'm going back from the basics of Java, and I've learned these new things.
@@ -209,3 +383,20 @@ For this day I'm going back from the basics of Java, and I've learned these new 
     because equals compare the object and if the object is string
     it would check it character per character;
 
+## Day 4
+
+### Throwable
+    All exception classes are derived from a class called
+    "Throwable". And there are two direct subclass of Throwable:
+    "Exception" and "Error". Exceptions of type "Error" are related
+    to errors that occur on JVM itself and not in program. These types
+    of exceptions are beyond our control, and your program will not deal
+    with 
+
+
+### Exception Handling
+    Benefits of exception handling is that the program will
+    still run if the exception has been handled and also
+    show an approriate error message, instead of letting
+    JVM handle the error, which would stop the program,
+    and show the stack trace of the error.
