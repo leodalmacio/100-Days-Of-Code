@@ -180,7 +180,7 @@ For this day I'm going back from the basics of Java, and I've learned these new 
     This process is called interning.
 
     String first = "Baeldung"; 
-    String second = "Baeldung"; 
+    String second = "Baeldung";
     System.out.println(first == second); // true
 
     This is true because first and seconde are referencing from the

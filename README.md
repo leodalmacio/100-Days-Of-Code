@@ -155,11 +155,11 @@ MAX_PRIORITY = 10;
 
 **<u>Inter-thread Communication</u>**
 * notify();
-    * notify one thread that currently waits
+    > * notify one thread that currently waits
 * wait();
-    * stop the current thread from running and wait for a notify method to be called to the thread
+    > * stop the current thread from running and wait for a notify method to be called to the thread
 * notifyAll();
-    * notify all threads that currently wait
+    > * notify all threads that currently wait
 
 **NOTE** take note of DeadLock where in all threads are waiting and nothing is running which would in turn seems like it hangs
 
@@ -177,11 +177,11 @@ Each enumeration constanst are implicitly public and static.
 **<u>values() and valuesOf()</u>**
 
 * values()
-    * used to get all the values of the enum
+    > * used to get all the values of the enum
 * valuesOf(arg)
-    * return the enum with the value of arg;
+    > * return the enum with the value of arg;
 
-**<u>CONSTRUCTORS, METHODS, INSTANCE VARIABLES, AND ENUMERATIONS</u>**
+**<u>Constructors, Methods, Instance Variables, and Enumeration</u>**
 
 > * Each enum constants is an object of its enum type. Thus, it can define constructor, add methods, and have instance variables.
 > * Each enum constant can call any method defined by enum.
@@ -203,18 +203,131 @@ enum Transport {
 ```
 
 **<u>Two Important Restrictions Of Enumeration</u>**
+
 > 1. Enumeration can't inherit from another class
 > 2. An enum can't be a superclass, which means it can't be extended.
 
-**<u>Java.lang,enum</u>**
+**<u>Java.lang.enum</u>**
+
 Even though you can't inherit a superclass when declaring enum, all enumerations inherit from **java.lang.enum**
 
 **<u>compareTo() and ordinal()</u>**
+
 * ordinal()
     > * get the ordinal value of the enum type starting from 1
 * compareTo()
     > * check if the ordinal value of enum type is greater than less than or equal to.
 
+#### Day 3 (July 25, 2019 - Thu)
+*__Goals for the week__*
+1. ~~Learn and create a Multithreaded Program~~
+2. ~~Study Enumarations, Autoboxing, Static Import,~~ and Annotations
+
+**<u>Type Wrappers</u>**
+Type Wrappers are classes that encapsulate the primitive data types.
+
+Pre-Java 9
+
+Integer (int num)
+
+Integer (String str) thrown NumberFormatException
+
+Double (double num)
+
+Double (String str) throw NumberFormatException
+
+E.i
+int prim = 1;
+
+Integer obj = new Integer(prim);
+
+From Java 9
+
+Type-wrapper constructors have been depricated, in favor of **valueOf()** as this would provide a cache for datas from (-128 to +127)
+
+This works some how the same as String Pool where in:
+``` 
+Integer intObj = 127;
+Integer intObj2 = 127;
+System.out.println(intObj == intObj2); // true
+
+Integer intObj = 128;
+Integer intObj2 = 128;
+System.out.println(intObj == intObj2); // false
+
+Integer intObj = 128;
+Integer intObj2 = 128;
+System.out.println(intObj.equals(intObj2)); // true
+```
+
+**NOTE** Primitive data types are used instead of the Object because they are much faster.
+
+**<u>Auto-boxing and Auto-unboxing</u>**
+* Auto-boxing
+    * The process which box(convert) a primitive data type to their corresponding data type.
+* Auto-unboxing 
+    * Vice versa, Object data type -> Primitive data type
+
+Autoboxing and unboxing also occurs in method params and expressions
+void sample (Integer intObj){
+    .../
+}
+sample(123);// Auto-boxes the 123 primitive to Integer
+
+Integer sampleObj = 123;
+++sampleObj; // This would unbox the sampleObj, increment it, then rebox it.
+
+**WARNING** even though you can use the Object representation of the Data Types(Double, Integer...)
+you should still not use them when not needed, as they would add overhead that isn't needed.
+
+
+**<u>Static Imports</u>**
+Used to import static members by their name
+
+So instead of ```Math.pow()```, and ```Math.sqrt()```
+
+You can just import them by
+
+```
+import static java.lang.Math.sqrt;
+import static java.lang.Math.pow;
+// you can also use
+// import static lang.Math.*;
+// which would import all statics on Math
+
+// then you can use them as
+
+sqrt();
+pow();
+```
+**NOTE** Just because it is convinient you shouldn't abuse it.
+E.i.
+import static java.lang.System.out;
+
+// you can use it as
+out.println("The out now is not that clear, because you do not know what out it is pertaining");
+
+
+**<u>Annotations(Metadata)</u>**
+Provides a way to embed supplemental information into a soure file.
+
+They are created through a mechanism based on the interface
+
+```
+@interface MyAnnotation{
+    String str();
+    int val();
+}
+```
+
+All annotations consists solely of method declartions.
+However, you don't provide bodies to these methods.
+Instead, Java does that.
+Moreoever, the methods act much like fields.
+
+All Annotations automatically extends from Annotation(java.lang.annotation) interface.
+
+... to be continued
 
 
 **<u></u>**
