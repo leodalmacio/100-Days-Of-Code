@@ -226,27 +226,30 @@ Even though you can't inherit a superclass when declaring enum, all enumerations
 **<u>Type Wrappers</u>**
 Type Wrappers are classes that encapsulate the primitive data types.
 
-Pre-Java 9
+* Pre-Java 9
 
-Integer (int num)
+    * Integer (int num)
 
-Integer (String str) thrown NumberFormatException
+    * Integer (String str) thrown NumberFormatException
 
-Double (double num)
+    * Double (double num)
 
-Double (String str) throw NumberFormatException
+    * Double (String str) throw NumberFormatException
 
+``` java
 E.i
 int prim = 1;
 
+
 Integer obj = new Integer(prim);
+```
 
-From Java 9
+* From Java 9
 
-Type-wrapper constructors have been depricated, in favor of **valueOf()** as this would provide a cache for datas from (-128 to +127)
+    * Type-wrapper constructors have been depricated, in favor of **valueOf()** as this would provide a cache for datas from (-128 to +127)
 
-This works some how the same as String Pool where in:
-``` 
+    * This works some how the same as String Pool where in:
+``` java
 Integer intObj = 127;
 Integer intObj2 = 127;
 System.out.println(intObj == intObj2); // true
@@ -269,6 +272,7 @@ System.out.println(intObj.equals(intObj2)); // true
     * Vice versa, Object data type -> Primitive data type
 
 Autoboxing and unboxing also occurs in method params and expressions
+```java
 void sample (Integer intObj){
     .../
 }
@@ -276,19 +280,21 @@ sample(123);// Auto-boxes the 123 primitive to Integer
 
 Integer sampleObj = 123;
 ++sampleObj; // This would unbox the sampleObj, increment it, then rebox it.
+```
 
 **WARNING** even though you can use the Object representation of the Data Types(Double, Integer...)
 you should still not use them when not needed, as they would add overhead that isn't needed.
 
 
 **<u>Static Imports</u>**
+
 Used to import static members by their name
 
 So instead of ```Math.pow()```, and ```Math.sqrt()```
 
 You can just import them by
 
-```
+``` java
 import static java.lang.Math.sqrt;
 import static java.lang.Math.pow;
 // you can also use
@@ -300,20 +306,25 @@ import static java.lang.Math.pow;
 sqrt();
 pow();
 ```
+
 **NOTE** Just because it is convinient you shouldn't abuse it.
-E.i.
+
+E.g.
+``` java
 import static java.lang.System.out;
 
 // you can use it as
 out.println("The out now is not that clear, because you do not know what out it is pertaining");
+```
 
 
 **<u>Annotations(Metadata)</u>**
+
 Provides a way to embed supplemental information into a soure file.
 
 They are created through a mechanism based on the interface
 
-```
+``` java
 @interface MyAnnotation{
     String str();
     int val();
