@@ -9,6 +9,9 @@
 
 So, for now that's what I can think about, so good luck with the second attempt.
 
+## FUTURE TO DOs:
+1. Improve upon what you've learned about Annotations, specially Marker Annotation
+2. Go beyod the basics of Generics
 
 ## Month 1 (July 24, 2019 - Aug. 22, 2019)
 
@@ -218,10 +221,12 @@ Even though you can't inherit a superclass when declaring enum, all enumerations
 * compareTo()
     > * check if the ordinal value of enum type is greater than less than or equal to.
 
-#### Day 3 (July 25, 2019 - Thu)
+#### Day 3 (July 26, 2019 - Fri)
 *__Goals for the week__*
 1. ~~Learn and create a Multithreaded Program~~
 2. ~~Study Enumarations, Autoboxing, Static Import,~~ and Annotations
+
+---
 
 **<u>Type Wrappers</u>**
 Type Wrappers are classes that encapsulate the primitive data types.
@@ -338,7 +343,35 @@ Moreoever, the methods act much like fields.
 
 All Annotations automatically extends from Annotation(java.lang.annotation) interface.
 
-... to be continued
+#### Day 4 (July 27, 2019 - Sat)
+*__Goals for the week__*
+1. ~~Learn and create a Multithreaded Program~~
+2. ~~Study Enumarations, Autoboxing, Static Import, and Annotations~~
+
+*__New Goals__*
+1. Generics
+---
+
+**<u>Annotations(Metadata)</u>**
+
+To provide value to an annotation (from day 3)
+
+```java
+// Annotate a method.
+@MyAnnotation(str = "Annotation Example", val = 100)
+public static void myMeth() {
+    //... 
+}
+```
+
+**<u>Marker Annotations</u>**
+> * These are specified w/o passing passing any arguments and w/o using parentheses.
+> * Their sole purpose is to mark an item with some attributes.
+
+**<u>Generics</u>**
+
+> * at its core _generics_ means _parameterized types_.
+
 
 
 **<u></u>**
