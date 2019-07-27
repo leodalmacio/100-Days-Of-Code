@@ -372,6 +372,94 @@ public static void myMeth() {
 
 > * at its core _generics_ means _parameterized types_.
 
+```java
+public class Gen<T> {
+	T obj; 
+
+	Gen(T o) {
+		obj = o;
+	}
+	
+	T getob() {
+		return obj;
+	}
+	
+	void showType() {
+		System.out.println("Type of T is " + obj.getClass().getName());
+	}
+}
+
+class GenDemo {
+	public static void main(String[] args) {
+		Gen<Integer> iObj;
+		iObj = new Gen<Integer>(88);
+		iObj.showType();
+		int v = iObj.getob();
+		System.out.println("value: " + v);
+
+		System.out.println();
+
+		Gen<String> strObj = new Gen<String>("Generics Test");
+		strObj.showType();
+		String str = strObj.getob();
+		System.out.println("value: " + str);
+	}
+}
+
+```
+
+Notice the <T>, the T acts as the name of the **type PARAMETER**.
+Thus T can be changed to ASD -> <ASD> if you want but it's traditional to use a Single Capital Letter as the type paramter name.
+Other commonly used is **V** and **E**.
+
+**NOTE** Java compiler doesn't actually create different versions of **Gen**, or of any other generic classes. Although it is helpful to think in these terms, it is not what actually happens.
+Instead, the compiler removes all generic type information, substituting necessary casts, to make the code behave as if a specific version of Gen was created.
+Thus, there is really only one version of **Gen** that actually exists in the program.
+The process of removing generic type of information is called _erasure_.
+
+**<u>Two type Parameter</u>**
+
+``` java
+public class TwoGen<T, V> {
+    T obj1;
+    V obj2;
+
+    TwoGen(T o1, V o2) {
+        obj1 = o1;
+        obj2 = o2;
+    }
+}
+```
+
+**<u>Bounded Types</u>**
+
+Are used to implement type safety to the generics.
+
+``` java
+public class BoundedTypes<T, V extends Number> {
+    // code goes here
+}
+```
+With this, the only objects that the **V** Type Parameter would take is the Super Class Number or all subclasses of Number.
+
+This would also work:
+
+``` java
+public class Pair<T, V extends T> {
+    // ... code goes here
+}
+
+public static void main {
+    // Okay because both T and V are Integer
+    Pair<Integer, Integer> x = new Pair<Integer, Integer>(1, 2);
+
+    // Also Okay because Integer is sublcass of Number
+    Pair<Number, Integer> y = new Pair<Number, Integer>(10.4, 2);
+
+    // Not valid because String is not subclass of Number
+    Pair<Number, String> z = new Pair<Number, string>(10.4, "2");
+}
+```
 
 
 **<u></u>**
