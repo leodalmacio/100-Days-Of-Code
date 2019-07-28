@@ -461,6 +461,256 @@ public static void main {
 }
 ```
 
+#### Day 5 (July 28, 2019 - Sun)
+*__Goals for the week__*
+1. ~~Learn and create a Multithreaded Program~~
+2. ~~Study Enumarations, Autoboxing, Static Import, and Annotations~~
+
+*__New Goals__*
+1. Generics
+2. Finish week two of LHTL
+---
+
+**<u>Using wild card arguments</u>**
+
+``` java
+public class NumericFns<T extends Number> {
+	T num;
+
+	NumericFns(T o) {
+		num = o;
+	}
+
+	boolean absoluteEqual(NumericFns<?> ob) {
+		return Math.abs(num.doubleValue()) == Math.abs(ob.num.doubleValue());
+	}
+}
+```
+
+The **?** is used to accept all types of Objects that uses the Generic NumericFns, but because the NumericFns is
+bounded by <T extends Number> the type safety is still there.
+
+**<u>Bounded Wild Cards</u>**
+
+Based from the above you can also use this
+
+``` java
+NumericFns<? extends Number> ob) {}
+```
+
+So that you can also bound the wild card.
+
+**<u>Generic Methods</u>**
+
+As learned previously generic method can make use of the type parameter of the class.
+
+However, it's also possible to declare a generic method on it's own.
+
+``` java
+public class GenericMethodDemo {
+	static <T extends Comparable<T>, V extends T> boolean arraysEqual(T[] x, V[] y) {
+		if (x.length != y.length) return false;
+
+		for (int i = 0; i < x.length; i++)
+			if (!x[i].equals(y[i])) return false;
+
+		return true;
+	}
+
+	public static void main(String[] args) {
+		Integer nums[] = { 1, 2, 3, 4, 5 };
+		Integer nums2[] = { 1, 2, 3, 4, 5};
+		Integer nums3[] = { 1, 2, 7, 4, 5};
+		Integer nums4[] = { 1, 2, 7, 4, 5, 6};
+
+		System.out.println(arraysEqual(nums, nums)); // true
+		System.out.println(arraysEqual(nums, nums2)); // true
+		System.out.println(arraysEqual(nums, nums3)); // false
+		System.out.println(arraysEqual(nums, nums4)); // false
+
+		// This won't compile because nums and dvals are not the same type
+		// Double dvals[] = { 1.1, 2.2, 3.3, 4.4, 5.5 };
+		//System.out.println(arraysEqual(nums, nums4));
+	}
+}
+
+```
+
+**NOTICE** that the Type Parameter ```<T extends Comparable<T>, V extends T>``` is declared before the return type ```boolean```.
+
+**<u>Generic Constructor </u>**
+
+``` java
+public class GenericConstructor {
+	private int sum;
+
+	<T extends Number> GenericConstructor(T args) {
+		sum = 0;
+		for (int i = 0; i < args.intValue(); i++)
+			sum++;
+	}
+
+	int getSum() {
+		return sum;
+	}
+}
+
+class GenConsDemo {
+	public static void main(String[] args) {
+		GenericConstructor sum = new GenericConstructor(4.0);
+		System.out.println("Summation of 4.0 is " + sum.getSum());
+	}
+}
+```
+
+**<u>Generic Interface</u>**
+
+These are used the same way as classes
+
+``` java
+interface Containment<T>{
+    boolean contais(T o);
+}
+
+class MyClass<T> implements Containment<T>{
+    T[] arrayRef;
+    MyClass(T[] o) {
+        arrayRef = 0;
+    }
+
+    public boolean contains(T o) {
+        for (T x : arrayRef)
+            if (x.equals(o)) return true;
+        return false
+    }
+}
+```
+
+The <T> from the class would be also used as the type parameter for the interface.
+
+**NOTE** because the interface is generic, the class also needs to be generic as you can't then pass the type paramter to the interface. Unless you would immediately declare the type parameter.
+``` java
+class MyClass<T> implements Containment<T>{} // this is correct
+class MyClass implements Containment<T>{} // this is wrong
+class MyClass implements Containment<Double>{} // this is correct
+```
+
+You can also bound the interface
+
+``` java
+public interface GenericInterface <T extends Number> {
+	boolean contains(T o);
+}
+
+// This is wrong because you don't need to extend the Number on the GenericInterface anymore.
+// public class GenericInterfaceImp<T extends Number> implements GenericInterface<T extends Number> {
+public class GenericInterfaceImp<T extends Number> implements GenericInterface<T> {
+	@Override
+	public boolean contains(T o) {
+		return false;
+	}
+}
+```
+
+**<u>Raw Types</u>**
+
+Because Generics are not implemented prior to JDK 5.
+Java allows the Generics to transtion from the old implementation. Thus you can do something like this
+
+``` java
+class Gen<T>{
+    // ...
+}
+main {
+    Gen<Integer> notRaw = new Gen<Integer>(10); // this would work
+    Gen raw = new Gen (10); // This would also work, but the type safety is lost
+    notRaw = raw; // This would also work, but the raw type would override the type safety of not raw.
+}
+```
+
+**<u>Diamond Operator</u>**
+
+``` java
+// Without the the diamond operator
+HashMap<Integer, String> hashMap = new HashMap<Integer, String>();
+
+// With diamond operator
+HashMap<Integer, String> hashMap = new HashMap<>();
+```
+
+**<u>Local Variable Type Inferance and Generics</u>**
+
+``` java
+TwoGen<Integer, String> tgObj = new TwoGen<Integer, String>(42, "testing");
+
+var tgObj = new TwoGen<Integer, String>(42, "testing");
+```
+
+**<u>Type Erasure</u>**
+
+During compilation, generic information are removed(erased). And would be replace by the bound type of the Type Parameter.
+Or the **_Object_** if the there is none, and applying the appropriate cast.
+
+**NOTE** Errors from Type Erasure
+
+``` java
+interface IGenQ<T extends Number>{}
+
+class GenQueue<T extends Integer> implements IGenQ<T>{}
+
+
+// This is an error you can't overload the method because of type erasure.
+void sad (List<IGenQ<Integer>> sample){
+    return;
+}
+
+void sad (List<GenQueue<Integer>> sample){
+    return;
+}
+
+// The reason is that the List is implemented with
+// List<E> extends Collection <E>
+// Because of type erasure the List<IGenQ<Integer>> would be just List with type paramter as an Object
+// So even if you add List<String>, it would still be type erased to an Object
+
+// This won't also work
+class MyGenClass<T, V>{
+    void set(T o) {}
+    void set(V o) {}
+}
+// because what if you do
+// MyGenClass<String, String>
+// It won't be able to differentiate these two.
+
+```
+
+**<u>Some Generic Restirctions</u>**
+
+* Type Parameters can't be instantiated
+```java
+class Gen<T> {
+    T obj;
+    Gen() {
+        obj = new T(); // won't work
+    }
+} 
+```
+
+* Static Members can't use Type Parameter Declared by Class
+
+```java
+class Wrong<T> {
+    static T ob; // won't work, as the type of T is not yet defined
+
+    static <T> boolean sample(T o) {} // but this would work;
+}
+
+public interface IGenQ <T> {
+	static <T> void sample(T o) { } // This would also work
+}
+```
+
+... To be continue (Generic Array Restriction)
 
 **<u></u>**
 **<u></u>**
