@@ -710,6 +710,22 @@ public interface IGenQ <T> {
 }
 ```
 
+#### Day 5 (July 28, 2019 - Sun)
+
+*__Emergency Goal__*
+1. Learn Firebase - Firestore
+
+*__Goals for the week__*
+1. ~~Learn and create a Multithreaded Program~~
+2. ~~Study Enumarations, Autoboxing, Static Import, and Annotations~~
+
+*__New Goals__*
+1. Generics
+2. Finish week two of LHTL
+---
+
+Thoughts: firebase/firestore is somehow just the same as Mongo, but firestore is much easier to scale horizontally than Mongo. They also have functions and request that can directly query to the database using firebase's own API without creating your own API. But I'm still unsure if that is a good idea instead of creating an API to manage the users.
+
 ... To be continue (Generic Array Restriction)
 
 **<u></u>**
