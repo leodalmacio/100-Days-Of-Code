@@ -17,6 +17,9 @@ So, for now that's what I can think about, so good luck with the second attempt.
 
 *__Goals__*
 1. Finish the Beginners Java book
+
+*__Emergency Goals__*
+1. Learn Firebase
 ---
  
 
@@ -710,7 +713,7 @@ public interface IGenQ <T> {
 }
 ```
 
-#### Day 5 (July 28, 2019 - Sun)
+#### Day 6 (July 29, 2019 - Mon)
 
 *__Emergency Goal__*
 1. Learn Firebase - Firestore
@@ -725,6 +728,79 @@ public interface IGenQ <T> {
 ---
 
 Thoughts: firebase/firestore is somehow just the same as Mongo, but firestore is much easier to scale horizontally than Mongo. They also have functions and request that can directly query to the database using firebase's own API without creating your own API. But I'm still unsure if that is a good idea instead of creating an API to manage the users.
+
+### Day 7 (July 30, 2019 - Tue)
+
+*__Emergency Goal__*
+1. Learn Firebase - Firestore
+
+*__Goals for the week__*
+1. ~~Learn and create a Multithreaded Program~~
+2. ~~Study Enumarations, Autoboxing, Static Import, and Annotations~~
+
+*__New Goals__*
+1. Generics
+2. Finish week two of LHTL
+
+---
+
+**<u>NoSQL vs SQL</u>**
+
+* SQL
+    * faster write
+    * Mostly scales vertically
+* NoSQl
+    * faster read
+    * Easy to scale horizontally
+
+**<u>Cloud Firestore Structure</u>**
+* NoSQL
+* Horizontally Scaling
+* Document Model Database
+* Exists in Cloud
+
+**<u>How query works on Firestore</u>**
+
+> * Queries that we're run on Cloud Firestore could only be used to find Documents within one specific collection or subcollection.
+    > * you can also do a subcollection group query using collection group query, to apply this, you need to define indexes on the cloud firestore console.
+> * Query results are shallow, meaning the subgroups aren't included by itself.
+
+
+**<u>Setting up Firebase</u>**
+1. npm install -g firebase-tools
+2. firebase login
+3. firebase init
+4. firebase serve --host 0.0.0.0 // accepts requests to any host
+5. or firebase deploy -m "Message"
+
+**<u>Using Firebase</u>**
+``` javascript
+// index.js
+const functions = require('firebase-functions');
+const firebase = require('firebase');
+const app = require('express')();
+
+// config.js
+const firebaseConfig = {
+    apiKey: "AIzaSyDvQC8b6QS9RBiE5vbMJAaHHhjKYvu9MaU",
+    authDomain: "socialape-3ed53.firebaseapp.com",
+    databaseURL: "https://socialape-3ed53.firebaseio.com",
+    projectId: "socialape-3ed53",
+    storageBucket: "socialape-3ed53.appspot.com",
+    messagingSenderId: "975840971715",
+    appId: "1:975840971715:web:5bffce1b32363bad"
+};
+
+// firebase
+const { firebaseConfig } = require('../util/config');
+const firebase = require('firebase');
+firebase.initializeApp(firebaseConfig)
+
+// admin.js
+const admin = require('firebase-admin');
+admin.initializeApp();
+const db = admin.firestore();
+```
 
 ... To be continue (Generic Array Restriction)
 
