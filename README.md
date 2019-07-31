@@ -802,6 +802,33 @@ admin.initializeApp();
 const db = admin.firestore();
 ```
 
+##
+
+
+
+### Week 2
+*Objectives*
+1. Learn Generics
+
+### Day 1(8) (July 31, 2019 - Wed)
+
+*__Emergency Goal__*
+1. Learn Firebase - Firestore
+
+*__Goals for the week__*
+1. Generics
+
+---
+
+Thoughts: Right now, I'm still having trouble trying to understand what scope the Admin SDK have.
+Because I've tried disabling all access to the database via rules but, the API can still fetch data.
+But using the simulation with direct access to the with an unauthenticated user, fails.
+It I think the one that's causing it is the Admin SDK, but I'm still unsure, as I've already tried
+removing the config for the Admin SDK, but to no avail. Hopefully I can find an answer for this.
+
+Solution?: It seems like server client libraries uses a different validation not the same as the rules.
+(Search for IAM[Identity and Access Manager])
+
 ... To be continue (Generic Array Restriction)
 
 **<u></u>**
