@@ -826,8 +826,8 @@ But using the simulation with direct access to the with an unauthenticated user,
 It I think the one that's causing it is the Admin SDK, but I'm still unsure, as I've already tried
 removing the config for the Admin SDK, but to no avail. Hopefully I can find an answer for this.
 
-Solution?: It seems like server client libraries uses a different validation not the same as the rules.
-(Search for IAM[Identity and Access Manager])
+Problem: It seems like server client libraries uses a different validation as the db rules.
+(Search for IAM[Identity and Access Manager])g 
 
 ... To be continue (Generic Array Restriction)
 
