@@ -834,6 +834,121 @@ Problem: It seems like server client libraries uses a different validation as th
 **<u></u>**
 **<u></u>**
 
+### Day 2(9) (August 1, 2019 - Thu)
+
+*__Emegency Goal__*
+1. Learn Firebase - Firestore
+2. Learn PWA
+
+*__Goals for the week__*
+1. Generic
+
+---
+
+
+*__What is PWA?__*
+PWA stands for **Progressive Web Apps**.
+It is a capability by a website to provide an App-like experience for the user.
+They also prove an offline capabilities to a website, by caching some datas, via Service Worker.
+
+
+
+*__ How To Implement a PWA?__*
+A PWA can be declared by adding a manifesto.json.
+and importing it as a link.
+
+```json
+{
+    "name": "Food Ninja",
+    "short_name": "FoodNinja",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#FFE9D2",
+    "theme_color": "#FFE1C4",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/img/icons/icon-72x72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "/img/icons/icon-96x96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "/img/icons/icon-128x128.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "/img/icons/icon-144x144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "/img/icons/icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/img/icons/icon-384x384.png",
+            "type": "image/png",
+            "sizes": "384x384"
+        },
+        {
+            "src": "/img/icons/icon-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
+```
+```html
+<link rel="manifest" href="/manifest.json">
+```
+
+But currently some fields of the manifest are not supported by iOS.
+
+To provide support to iOS, you need to manualy import some settings of manifest
+``` html
+<!-- iOS Support -->
+<link rel="apple-touch-icon" href="/icons/icon-96x96.png">
+<meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+```
+
+*__Intro to Service Workers__*
+Service workers are the reason how awesome are PWA.
+
+* Basically javascript files, but not the same js as the one we're used to coding.
+* Run on a different thread, their own thread. Separate from the main thread of the web app.
+* Doesn't have access to the DOM, unline the normal js that is running on the main thread. So they can't DIRECTLY read or write a content on the page.
+* Running on background.
+* Their purpose is to listen and react to events that occur in the browser
+    * Push Notifications
+    * Fetch HTTP Request
+* They can only access files on their directory and sub-directory, but not outside their directory
+    * Thus they are placed on the root directory of the project.
+* They only work on Secure protocol, like https, except, localhost.
+
+*__Service Worker Life-Cycle Events__*
+Create Service Worker(sw.js) on the index(because they are limited to their directory and sub-directory)
+Register the Service Worker(sw.js) on the app.js, when the browser detect the sw.js, it would fire an:
+1. (Register the Service Worker) -> Fires Install Event
+2. (Service becomes active) -> Fires Active Event -> (Service worker listens for events)
+
+Once active the service worker can then access all the different pages and files inside its scope.
+
+BUTTTT, what if you refresh a page.
+
+If you refresh a page, the previous service worker would still be used and it won't create a new one.
+
+Unless there is a code change on the service worker.
+
+If there is a code change on the service worker, a new service worker would be created.
+But even though it was created, it would still wait for the old instance of the service worker to finish.
+So if you then reload the page again, that's when the new service worker would be active.
 
 
 ### Week 2
