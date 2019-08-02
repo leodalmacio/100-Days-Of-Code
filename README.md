@@ -951,6 +951,13 @@ But even though it was created, it would still wait for the old instance of the 
 So if you then reload the page again, that's when the new service worker would be active.
 
 
+### Day 3(9) (August 2, 2019 - Fri)
+
+Thoughts: I've realize how amazingly useful service workers are. So yesterday I've learned that service workers work via event listeners which would intercept appropriate events to handle.
+
+I've learned that you can cache important details on the 'install' event of the life cycle of an SW. The Fetch those cache, data via the 'fetch' event of the SW life cycle. The fetch event will automatically trigger as long as there are request to servers, either internal or external css, js, etc.
+
+
 ### Week 2
 *Objectives*
 1. Learn Generics
