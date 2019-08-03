@@ -951,11 +951,89 @@ But even though it was created, it would still wait for the old instance of the 
 So if you then reload the page again, that's when the new service worker would be active.
 
 
-### Day 3(9) (August 2, 2019 - Fri)
+### Day 3(10) (August 2, 2019 - Fri)
+
+*__Emegency Goal__*
+1. Learn Firebase - Firestore
+2. Learn PWA
+
+*__Goals for the week__*
+1. Generic
+
+---
 
 Thoughts: I've realize how amazingly useful service workers are. So yesterday I've learned that service workers work via event listeners which would intercept appropriate events to handle.
 
 I've learned that you can cache important details on the 'install' event of the life cycle of an SW. The Fetch those cache, data via the 'fetch' event of the SW life cycle. The fetch event will automatically trigger as long as there are request to servers, either internal or external css, js, etc.
+
+### Day 4(11)  
+
+*__Emegency Goal__*
+1. Learn Firebase - Firestore
+2. Learn PWA
+
+*__Goals for the week__*
+1. Generic
+
+---
+
+*__Maintaining a proper cache version__*
+
+When you cache datas, it's important to provide versioning to them so that when there is a code change, we can remove the previous version of the cache, thus removing unnecessary datas.
+
+*__Static Caching__*
+
+Static caching is caching default resources at the start of the application life cycle.
+
+```javascript
+const staticCacheName = 'site-static-v2';
+const assets = [
+  '/',
+  '/index.html',
+  '/js/app.js',
+  '/js/ui.js',
+  '/js/materialize.min.js',
+  '/css/styles.css',
+  '/css/materialize.min.css',
+  '/img/dish.png',
+  'https://fonts.googleapis.com/icon?family=Material+Icons',
+  'https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2'
+];
+
+// install event
+self.addEventListener('install', evt => {
+  //console.log('service worker installed');
+  evt.waitUntil(
+    caches.open(staticCacheName).then((cache) => {
+      console.log('caching shell assets');
+      cache.addAll(assets);
+    })
+  );
+});
+```
+
+*__Dynamic Caching__*
+
+Dynamic caching provides a way to cache, resources that are visited by the user.
+Usually done, after a fetch event was triggered.
+
+```javascript
+const dynamicCacheName = 'site-dynamic-v1';
+
+self.addEventListener('fetch', evt => {
+  //console.log('fetch event', evt);
+  evt.respondWith(
+    caches.match(evt.request).then(cacheRes => {
+      return cacheRes || fetch(evt.request).then(fetchRes => {
+        return caches.open(dynamicCacheName).then(cache => {
+          cache.put(evt.request.url, fetchRes.clone());
+          return fetchRes
+        });
+      });
+    })
+  );
+});
+```
 
 
 ### Week 2
