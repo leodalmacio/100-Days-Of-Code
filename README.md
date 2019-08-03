@@ -966,7 +966,7 @@ Thoughts: I've realize how amazingly useful service workers are. So yesterday I'
 
 I've learned that you can cache important details on the 'install' event of the life cycle of an SW. The Fetch those cache, data via the 'fetch' event of the SW life cycle. The fetch event will automatically trigger as long as there are request to servers, either internal or external css, js, etc.
 
-### Day 4(11)  
+### Day 4(11)  (August 3, 2019 - Sat)
 
 *__Emegency Goal__*
 1. Learn Firebase - Firestore
