@@ -1035,12 +1035,22 @@ self.addEventListener('fetch', evt => {
 });
 ```
 
+### Day 5(12)  (August 4, 2019 - Sun)
 
-### Week 2
-*Objectives*
-1. Learn Generics
+*__Emegency Goal__*
+1. Learn Firebase - Firestore
+2. Learn PWA
 
+*__Goals for the week__*
+1. Generic
 
+---
+
+Thoughts: When appliying a caching mechanism. It's also important to adda fallback page for incase the pages that are being accessed isn't cached yet. It's also important that you would only send the fallback page when the resource being requested is .html.
+
+Study read all of these when there is time.
+
+https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/
 
 
 
