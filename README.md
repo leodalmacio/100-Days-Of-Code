@@ -13,7 +13,7 @@ So, for now that's what I can think about, so good luck with the second attempt.
 1. Improve upon what you've learned about Annotations, specially Marker Annotation
 2. Go beyod the basics of Generics
 
-## Month 1 (July 24, 2019 - Aug. 22, 2019)
+## Month 1 (July 24, 2019 - August 22, 2019)
 
 *__Goals__*
 1. Finish the Beginners Java book
@@ -1035,7 +1035,7 @@ self.addEventListener('fetch', evt => {
 });
 ```
 
-### Day 5(12)  (August 4, 2019 - Sun)
+### Day 5(12) (August 4, 2019 - Sun)
 
 *__Emegency Goal__*
 1. Learn Firebase - Firestore
@@ -1053,7 +1053,33 @@ Study read all of these when there is time.
 https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/
 
 
+### Day 6(13) (August 5, 2019 - Mon)
 
+*__Fetch Event__*
+
+Occurs when app request a resource on the server.
+
+If available the service worker would then just get a data from cache, instead of
+fetchinga another data from the server.
+
+*__Add to Home Screen(Pop-up)__*
+
+To make google automatically Pop up an Add To Home screen, the following criteria must be met
+
+* The web app is not already installed.
+    * and prefer_related_applications is not true.
+* Meets a user engagement heuristic (previously, the user had to interact with the domain for at least 30 seconds, this is not a requirement anymore)
+* Includes a web app manifest that includes:
+    * short_name or name
+    * icons must include a 192px and a 512px sized icons
+    * start_url
+    * display must be one of: fullscreen, standalone, or minimal-ui
+* Served over HTTPS (required for service workers)
+* Has registered a service worker with a fetch event handler
+
+When these criteria are met, will fire a ```beforeinstallprompt``` event that you can use to prompt the user to install your Progressive Web App, and may show a mini-info bar.
+
+Link: https://developers.google.com/web/fundamentals/app-install-banners/
 
 
 
