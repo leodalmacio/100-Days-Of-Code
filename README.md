@@ -1055,6 +1055,15 @@ https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookb
 
 ### Day 6(13) (August 5, 2019 - Mon)
 
+*__Emegency Goal__*
+1. Learn Firebase - Firestore
+2. Learn PWA
+
+*__Goals for the week__*
+1. Generic
+
+---
+
 *__Fetch Event__*
 
 Occurs when app request a resource on the server.
@@ -1081,8 +1090,34 @@ When these criteria are met, will fire a ```beforeinstallprompt``` event that yo
 
 Link: https://developers.google.com/web/fundamentals/app-install-banners/
 
+### Day 7(14) (August 6, 2019 - Tue)
+
+*__Emegency Goal__*
+1. ~~Learn Firebase - Firestore~~
+2. ~~Learn PWA~~
+
+*__Goals for the week__*
+1. Generic
+
+---
+
+PWA and Firebase Thoughts: I'm still amazed on how seemless the offline experience of the PWA is when using Firestore and PWA.
+As when you're offline the firebase would automatically use the offline db of the browser to make it seems like it's still working.
 
 
+To enable offline db just use:
+```javascript
+db.enablePersistence()
+    .catch(err => {
+        if (err.code === 'failed-precondition ') {
+            // Probably multiple tabs open at once
+            console.log('Persistance Failed');
+        } else if  (err.code === 'unimplemented') {
+            // lack of browser support
+            console.log('Persistence is not available')
+        }
+    });
+```
 
 
 
