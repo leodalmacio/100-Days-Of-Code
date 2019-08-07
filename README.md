@@ -19,7 +19,8 @@ So, for now that's what I can think about, so good luck with the second attempt.
 1. Finish the Beginners Java book
 
 *__Emergency Goals__*
-1. Learn Firebase
+1. ~~Learn Firebase~~
+2. ~~Learn PWA~~
 ---
  
 
@@ -808,15 +809,16 @@ const db = admin.firestore();
 
 ### Week 2
 *Objectives*
-1. Learn Generics
+1. ~~Learn Generics~~
 
 ### Day 1(8) (July 31, 2019 - Wed)
 
 *__Emergency Goal__*
-1. Learn Firebase - Firestore
+1. ~~Learn Firebase - Firestore~~
+2. ~~Learn PWA~~
 
 *__Goals for the week__*
-1. Generics
+1. ~~Generics~~
 
 ---
 
@@ -1097,13 +1099,14 @@ Link: https://developers.google.com/web/fundamentals/app-install-banners/
 2. ~~Learn PWA~~
 
 *__Goals for the week__*
-1. Generic
+1. ~~Generic~~
 
 ---
 
-PWA and Firebase Thoughts: I'm still amazed on how seemless the offline experience of the PWA is when using Firestore and PWA.
+PWA and Firebase Thoughts: Finally managed to finish the app! I'm still amazed on how seemless the offline experience of the PWA is when using Firestore and PWA.
 As when you're offline the firebase would automatically use the offline db of the browser to make it seems like it's still working.
 
+https://socialapes-78d5e.firebaseapp.com/
 
 To enable offline db just use:
 ```javascript
@@ -1119,24 +1122,75 @@ db.enablePersistence()
     });
 ```
 
-
-
-
-
-
 ### Week 3
 *Objectives*
 1. Lambda Expressions and Method References
 2. Modules
 
+---
+
+### Day 1(15) (August 7, 2019 - Wed)
+
+*__Goals for the week__*
+1. Lambda Expressions and Method References
+2. Modules
+
+---
 
 
+*__Lambda Expression__*
+* Anonymous Method
+    * executed by a method defined by Functional Interface
+* Functional Interface
+    * interfaces contain only one abstract method.
 
+```java
+interface SampleInterface {
+    void printNumber(int x);
+}
+class Test {
+    public static void main (String[] args) {
+        SampleInterface si = (n) -> System.out.print(n);
+    }
+}
+```
 
+*__Block Lambda Expressions__*
+* consists of more than single expression
 
+```java
+interface SampleInterface {
+    void printNumber(int x);
+}
+class Test {
+    public static void main (String[] args) {
+        SampleInterface si = (n) ->  {
+            System.out.print(n);
+            System.out.print(n*10);
+        }
+    }
+}
+```
 
-
-
+*__Generic Functional Interfaces__*
+* lambda expressions cannot be generic. However, functional interface associated with a lambda expression can be generic.
+``` java
+interface SampleInterface<T> {
+    boolean printNumber(T n, T m);
+}
+class Test {
+    public static void main (String[] args) {
+        SampleInterface<Integer> si = (a, b) ->  {
+            System.out.print("This is int" + a);
+            System.out.print("This is int" + b*10);
+        }
+        SampleInterface<String> si = (a, b) ->  {
+            System.out.print("This is string" + a);
+            System.out.print("This is string" + b);
+        }
+    }
+}
+```
 
 ### Week 4
 1. Swings? Still not sure
