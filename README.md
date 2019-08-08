@@ -1200,6 +1200,9 @@ class Test {
 
 ---
 
+Thoughts: I learned more regarding Lamda Expressions, particularly about closures and variable capture, where in those variables would be implicitly final when used inside the lamda. But I'm still wrapping around my mind regarding method referencing. Hopefully I can finish it yesterday.
+
+
 ### Week 4
 1. Swings? Still not sure
 
