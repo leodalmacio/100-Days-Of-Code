@@ -1192,6 +1192,14 @@ class Test {
 }
 ```
 
+### Day 1(15) (August 7, 2019 - Wed)
+
+*__Goals for the week__*
+1. Lambda Expressions and Method References
+2. Modules
+
+---
+
 ### Week 4
 1. Swings? Still not sure
 
