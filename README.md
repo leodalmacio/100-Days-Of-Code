@@ -1192,7 +1192,7 @@ class Test {
 }
 ```
 
-### Day 1(15) (August 7, 2019 - Wed)
+### Day 2(16) (August 8, 2019 - Thu)
 
 *__Goals for the week__*
 1. Lambda Expressions and Method References
@@ -1201,6 +1201,45 @@ class Test {
 ---
 
 Thoughts: I learned more regarding Lamda Expressions, particularly about closures and variable capture, where in those variables would be implicitly final when used inside the lamda. But I'm still wrapping around my mind regarding method referencing. Hopefully I can finish it yesterday.
+
+### Day 3(17) (August 9, 2019 - Fri)
+
+*__Goals for the week__*
+1. Lambda Expressions and Method References
+2. Modules
+
+---
+
+Thoughts: I've learned how to use method referencing, and how useful they can be. Still I'm still not confident on using them. I need to practice more.
+
+Sample code
+
+```java
+interface NumberInterface {
+    boolean process(int x);
+}
+
+class NumberUtil {
+    static boolean isEven(int x) {
+        return x % 2 == 0;
+    }
+}
+
+class NumberRunner {
+    boolean run(NumberInterface ni, int x) {
+        ni.process(x);
+    }
+}
+
+class TestDrive {
+    public static void main (String[] args) {
+        NumberRunner numberRunner = new NumberRunner();
+        System.out.println(numberRunner.run(NumberUtil::isEven, 2)); // true
+    }
+}
+
+```
+
 
 
 ### Week 4
