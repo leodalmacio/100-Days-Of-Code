@@ -1,4 +1,5 @@
 # 100-Days-Of-Code ATTEMPT 2
+
 -- Introspect for a bit on what ways we can do to improve our previous attempt
 
 1. Always leave a time to study, either after waking up, or going early on work, or on lunch break.
@@ -10,25 +11,30 @@
 So, for now that's what I can think about, so good luck with the second attempt.
 
 ## FUTURE TO DOs:
+
 1. Improve upon what you've learned about Annotations, specially Marker Annotation
 2. Go beyod the basics of Generics
 
 ## Month 1 (July 24, 2019 - August 22, 2019)
 
 *__Goals__*
+
 1. Finish the Beginners Java book
 
 *__Emergency Goals__*
+
 1. ~~Learn Firebase~~
 2. ~~Learn PWA~~
+
 ---
- 
 
 ### Week 1 (July 24, 2019 - July 30, 2019)
 
 *__Goals__*
+
 1. Learn and create a Multithreaded Program
 2. Study Enumarations, Autoboxing, Static Import, and Annotations
+
 ---
 
  
@@ -36,9 +42,12 @@ So, for now that's what I can think about, so good luck with the second attempt.
 #### Day 1 (July 24, 2019 - Wed)
 
 *__Goals for the week__*
+
 1. Learn and create a Multithreaded Program
 2. Study Enumarations, Autoboxing, Static Import, and Annotations
+
 ---
+
 **<u>Process-based vs Thread-based MULTITASKING</u>**
 
 * __Process-based multitasking__
@@ -1173,7 +1182,9 @@ class Test {
 ```
 
 *__Generic Functional Interfaces__*
+
 * lambda expressions cannot be generic. However, functional interface associated with a lambda expression can be generic.
+
 ``` java
 interface SampleInterface<T> {
     boolean printNumber(T n, T m);
@@ -1195,6 +1206,7 @@ class Test {
 ### Day 2(16) (August 8, 2019 - Thu)
 
 *__Goals for the week__*
+
 1. Lambda Expressions and Method References
 2. Modules
 
@@ -1205,6 +1217,7 @@ Thoughts: I learned more regarding Lamda Expressions, particularly about closure
 ### Day 3(17) (August 9, 2019 - Fri)
 
 *__Goals for the week__*
+
 1. Lambda Expressions and Method References
 2. Modules
 
@@ -1240,9 +1253,75 @@ class TestDrive {
 
 ```
 
+### Day 4(18) (August 10, 2019 - Sat)
+
+*__Goals for the week__*
+1. Lambda Expressions and Method References
+2. Modules
+
+---
+
+Thoughts: For today, I still studied regarding Method Referencing and I'm kinda getting the hang of it, but I still need some practice. I've learned about a new Method Reference via instance method where in the functional interface needs to accept the class where the function would be referenced as an argument. And also method referencing via Constructor using ClassName::new.
+
+Instance method using ClassName::instanceMethodName
+
+``` java
+interface SampleInterface {
+    boolean test (SampleClass s, int x);
+}
+class SampleClass {
+    int x;
+    public SampleClass(int x) {
+        this.x = x;
+    }
+    boolean isFactor(int n) {
+        return x % n == 0;
+    }
+}
+class TestDrive {
+    public static void main (String[] args) {
+        SampleClass sampleClass = new SampleClass(12);
+        SampleClass sampleClass2 = new SampleClass(15);
+
+        SampleInterface sampleInterface = SampleClass::isFactor;
+
+        sampleInterface.test(sampleClass, 4); // true
+        sampleInterface.test(sampleClass2, 4); // false
+    }
+}
+```
+
+Sample for Constructor Referencing ClassName::new
+
+```java
+interface SampleInterface {
+    public construct(String s);
+}
+
+class SampleClass {
+    private String str;
+
+    public SampleClass(String str) {
+        this.str = str;
+    }
+
+    String getStr() {
+        return str;
+    }
+}
+
+class TestDrive {
+    SampleInterface sampleInterface = SampleClass::new;
+    System.out.println(sampleInterface.construct("Method Refed Constructor!").getStr); // Method Refed Constructor!
+}
+
+
+```
+
 
 
 ### Week 4
+
 1. Swings? Still not sure
 
 
