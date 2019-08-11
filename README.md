@@ -1318,7 +1318,27 @@ class TestDrive {
 
 ```
 
+### Day 5(19) (August 11, 2019 - Sun)
 
+*__Goals for the week__*
+1. ~~Lambda Expressions and Method References~~
+2. Modules
+
+---
+
+Thoughts: So today, I've finished the Method Referencing, and I'm slightly more confident on using them, and I've proceed with learning modules.
+My understand right now is pretty simple, but it seems like modules are just away to restrict access to some packages, which would be great for huge projects.
+But except for that, I don't see any other use for now. Need to continue learning more.
+
+To grant access to modules, you need to create a ```module-info.java```
+
+
+Sample
+```java
+module sample { //sample is the name of module
+    requires leo.samplepackage; // sample package is package from a different module/
+}
+```
 
 ### Week 4
 
