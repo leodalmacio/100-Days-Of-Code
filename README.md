@@ -1350,6 +1350,16 @@ module sample { //sample is the name of module
 
 Thoughts: So far I kinda understand how module works, because it's concept kinda reminds of ES6 imports. But when I'm trying it, seems like I can't create a module-info.java when I'm create a new Module on IntelliJ, and I'm left utterly confused on why it's not working. I think that I might need to create two projects and try to do that there implement the modules there? Still unsure, I need to verify it tomorrow.
 
+### Day 7(21) (August 13, 2019 - Tue)
+
+*__Goals for the week__*
+1. ~~Lambda Expressions and Method References~~
+2. Modules
+
+---
+
+Thoughts: I've finally managed to require and export modules. I've learned more regarding transitive modules and the to keyword when exporting packages. I've also learned regarding Service and Service Provider, which for a pluggable architecture such as translating a language to another Language. I'm acutally quite curious on how they are implemented, but I would focus first on the modules.
+
 ### Week 4
 
 1. Swings? Still not sure
