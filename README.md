@@ -1362,7 +1362,19 @@ Thoughts: I've finally managed to require and export modules. I've learned more 
 
 ### Week 4
 
-1. Swings? Still not sure
+*__Goals for the week__*
+1. Modules
+
+---
+
+### Day 1(22) (August 14, 2019 - Wed)
+
+*__Goals for the week__*
+1. Modules
+
+---
+
+Thoughts: Today I've got a glimpse on how Service an Service Provider works with the context of Modules. It seems to work just like a factory, but kinda different. Because it seems like the ServiceLoader would fetch all Classes that Implements the interface provided to the type parameter of Service Provider. But I still need to verify it tomorrow.
 
 
 
