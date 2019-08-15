@@ -1376,15 +1376,11 @@ Thoughts: I've finally managed to require and export modules. I've learned more 
 
 Thoughts: Today I've got a glimpse on how Service an Service Provider works with the context of Modules. It seems to work just like a factory, but kinda different. Because it seems like the ServiceLoader would fetch all Classes that Implements the interface provided to the type parameter of Service Provider. But I still need to verify it tomorrow.
 
+### Day 1(23) (August 15, 2019 - Thu)
 
+*__Goals for the week__*
+1. Modules
 
+---
 
-
-
-
-
-
-
-
-
-
+Thoughts: For today, I've learn regarding open packages which would inturn make the packages accessible by default but only on run time, which is use for Reflaction, which I still haven't understand yet. I've also learned regarding requires static, which would only require the package when needed. And with that I've managed to finish My First Book regarding Java. I'm still unsure on how I would proceed after this book. I'll just think about it tomorrow.
