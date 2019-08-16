@@ -19,12 +19,15 @@ So, for now that's what I can think about, so good luck with the second attempt.
 
 *__Goals__*
 
-1. Finish the Beginners Java book
+1. ~~Finish the Beginners Java book~~
 
 *__Emergency Goals__*
 
 1. ~~Learn Firebase~~
 2. ~~Learn PWA~~
+
+*__NEW GOAL__*
+1. Clean Code
 
 ---
 
@@ -1364,6 +1367,7 @@ Thoughts: I've finally managed to require and export modules. I've learned more 
 
 *__Goals for the week__*
 1. Modules
+2. Clean Code
 
 ---
 
@@ -1372,15 +1376,32 @@ Thoughts: I've finally managed to require and export modules. I've learned more 
 *__Goals for the week__*
 1. Modules
 
+*__NEW GOALS FOR THE WEEK__*
+1. Naming And Functions (Clean Code)
+
 ---
 
 Thoughts: Today I've got a glimpse on how Service an Service Provider works with the context of Modules. It seems to work just like a factory, but kinda different. Because it seems like the ServiceLoader would fetch all Classes that Implements the interface provided to the type parameter of Service Provider. But I still need to verify it tomorrow.
 
-### Day 1(23) (August 15, 2019 - Thu)
+### Day 2(23) (August 15, 2019 - Thu)
 
 *__Goals for the week__*
-1. Modules
+1. ~~Modules~~
 
 ---
 
 Thoughts: For today, I've learn regarding open packages which would inturn make the packages accessible by default but only on run time, which is use for Reflaction, which I still haven't understand yet. I've also learned regarding requires static, which would only require the package when needed. And with that I've managed to finish My First Book regarding Java. I'm still unsure on how I would proceed after this book. I'll just think about it tomorrow.
+
+### Day 3(24) (August 16, 2019 - Friday)
+
+*__Goals for the week__*
+1. ~~Modules~~
+2. Naming And Functions (Clean Code)
+
+---
+
+Thoughts: Today, I've started reading regarding Pragmatic Thinking and watched the First Episode of The Clean Code.
+
+Regarding the Pragmatic Thinking, I was given a tip to ```Always Consider The Context```, to always think that small things make up for the larger things, and not just focus on it as a single entity disconnected from other things, thus small things greatly affects the bigger view of things. This kinda reminds of the The Slight Edge, his thoughts regarding compounding actions.
+
+Regarding the Clean Code, the first episode really hits me hard, Even though its quite hard to admit, I'm one of the reason why our code base isn't really clean, and specially when I'm rushing and being given deadlines that just increases the pressure that I'm feeling, that's when I really code poorly, and I really hate it right now, but Uncle Bob inspires me to right better code. And I'll try me best to do just that, what ever happens, I'll always care for my code.
