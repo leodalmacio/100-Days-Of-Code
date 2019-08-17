@@ -1404,4 +1404,30 @@ Thoughts: Today, I've started reading regarding Pragmatic Thinking and watched t
 
 Regarding the Pragmatic Thinking, I was given a tip to ```Always Consider The Context```, to always think that small things make up for the larger things, and not a single entity disconnected from other things, thus those small things greatly affects the bigger view of things. This kinda reminds of the The Slight Edge, his thoughts regarding compounding actions, and the stoics view of the world.
 
-Regarding the Clean Code, the first episode really hits me hard, Even though its quite hard to admit, I'm one of the reason why our code base isn't really clean, and specially when I'm rushing and being given deadlines that just increases the pressure that I'm feeling, that's when I really code poorly, and I really hate it right now, but Uncle Bob inspires me to write better code. And I'll try me best to do just that, what ever happens, I'll always care for my code.
+Regarding the Clean Code, the first episode really hits me hard. Even though its quite hard to admit, I'm one of the reason why our code base isn't really clean, and specially when I'm rushing and being given deadlines that just increases the pressure that I'm feeling. That's when I really code poorly, and it sucks right now, but Uncle Bob inspires me to write better code. And I'll try me best to do just that. What ever happens, I'll always care for my code.
+
+### Day 4(25) (August 17, 2019 - Saturday)
+
+*__Goals for the week__*
+1. ~~Modules~~
+2. Naming And Functions (Clean Code)
+
+---
+
+Thoughts: For today, I've watched the episode 2 of the Clean Code. 
+
+I've learned that a variable should carry its intent. If it needed a comment, it's probably not a good variable name.
+
+I've also learned that a programmer should avoid disinformation. As that can be the worst sin a programmer can make.
+
+I should also use prounanceable name. 
+
+And a clean code should always read like a well written prose. Choose parts of speech well.
+
+Variables and Classes should be nouns. Function be verbs, unless it returns a boolean, which would then inturn be a predicate. Boolean Variables should also be predicate. And enums are often Adjectives. 
+
+And lastly, I've learned regarding The Scope Rule.
+
+Variables should have short name on short scope, and long name on long scope.
+
+Functions and Classes should have long name on short scop, and short name on big scope. As they would be use on a large part of application as they are probably declared as public.
