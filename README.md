@@ -1414,20 +1414,30 @@ Regarding the Clean Code, the first episode really hits me hard. Even though its
 
 ---
 
-Thoughts: For today, I've watched the episode 2 of the Clean Code. 
+Thoughts: For today, I've watched the episode 2 of the Clean Code.
 
 I've learned that a variable should carry its intent. If it needed a comment, it's probably not a good variable name.
 
 I've also learned that a programmer should avoid disinformation. As that can be the worst sin a programmer can make.
 
-I should also use prounanceable name. 
+I should also use prounanceable name.
 
 And a clean code should always read like a well written prose. Choose parts of speech well.
 
-Variables and Classes should be nouns. Function be verbs, unless it returns a boolean, which would then inturn be a predicate. Boolean Variables should also be predicate. And enums are often Adjectives. 
+Variables and Classes should be nouns. Function be verbs, unless it returns a boolean, which would then inturn be a predicate. Boolean Variables should also be predicate. And enums are often Adjectives.
 
 And lastly, I've learned regarding The Scope Rule.
 
 Variables should have short name on short scope, and long name on long scope.
 
 Functions and Classes should have long name on short scop, and short name on big scope. As they would be use on a large part of application as they are probably declared as public.
+
+### Day 5(26) (August 18, 2019 - Sunday)
+
+*__Goals for the week__*
+1. ~~Modules~~
+2. Naming And Functions (Clean Code)
+
+---
+
+Thoughts: Today, I've watched the Episode 3 of the clean code, and learned that 10 lines of code in a function is already too big. I've also learned some shortcuts on refactoring using IntelliJ, and I'm trying to understand Uncle Bob's thought process when refactoring a code, hopefully I would be able to understand it in a week.
