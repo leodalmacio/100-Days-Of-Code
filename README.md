@@ -1441,3 +1441,15 @@ Functions and Classes should have long name on short scop, and short name on big
 ---
 
 Thoughts: Today, I've watched the Episode 3 of the clean code, and learned that 10 lines of code in a function is already too big. I've also learned some shortcuts on refactoring using IntelliJ, and I'm trying to understand Uncle Bob's thought process when refactoring a code, hopefully I would be able to understand it in a week.
+
+### Day 6(27) (August 19, 2019 - Sunday)
+
+*__Goals for the week__*
+1. ~~Modules~~
+2. ~~Naming And Functions (Clean Code)~~
+
+---
+
+Thoughts: Today I've managed to finish the Episode 3 of clean code. I'm still amazed how awesome Uncle Bob have managed to refactor that very long code. And he even manage to remove the switch case, which I'm still unaware how he had done that. That's why I would watch the fullscreen cast for that example after finishing the Function Structure, because they are kinda related.
+
+As for today I've learned if a function is very large, more likely than not, that is a class that is hidden on a large function. That's why you need to refactor it. Before refactoring, make sure to create test cases so you would be sure that you didn't break anything. I've also learned that for a function to do only one thing, you should extract and extract the function, until the implementation would not just be a restatement of it's name.
