@@ -1442,7 +1442,7 @@ Functions and Classes should have long name on short scop, and short name on big
 
 Thoughts: Today, I've watched the Episode 3 of the clean code, and learned that 10 lines of code in a function is already too big. I've also learned some shortcuts on refactoring using IntelliJ, and I'm trying to understand Uncle Bob's thought process when refactoring a code, hopefully I would be able to understand it in a week.
 
-### Day 6(27) (August 19, 2019 - Sunday)
+### Day 6(27) (August 19, 2019 - Monday)
 
 *__Goals for the week__*
 1. ~~Modules~~
@@ -1453,3 +1453,30 @@ Thoughts: Today, I've watched the Episode 3 of the clean code, and learned that 
 Thoughts: Today I've managed to finish the Episode 3 of clean code. I'm still amazed how awesome Uncle Bob have managed to refactor that very long code. And he even manage to remove the switch case, which I'm still unaware how he had done that. That's why I would watch the fullscreen cast for that example after finishing the Function Structure, because they are kinda related.
 
 As for today I've learned if a function is very large, more likely than not, that is a class that is hidden on a large function. That's why you need to refactor it. Before refactoring, make sure to create test cases so you would be sure that you didn't break anything. I've also learned that for a function to do only one thing, you should extract and extract the function, until the implementation would not just be a restatement of it's name.
+
+### Day 6(27) (August 19, 2019 - Monday)
+
+*__Goals for the week__*
+1. ~~Modules~~
+2. ~~Naming And Functions (Clean Code)~~
+3. ~~Function Structure~~
+
+---
+
+Thoughts: Today I've learned some stuffs, but I'm still wondering about them. I guess it's because I'm coming from the point of view of not actually implementing TDD. I guess I should make it a habit to implement TDD. I guess it also kinda hurts to know that defensive programming is actualy a code smell.
+So with regard to that null checks should be avoided as much as possible because that would be covered by test, unless they are from public apis, where you're unsure what the user would put.
+
+I've also learned regarding stepdown rule, where in the most important function(usually a public) is put at the top of the class, sorted by their importants, or how much details they provide.
+
+Another one is regarding arguments, where in 3 arguments is max but 2/1/0 is ideal. I've also learned not to pass boolean as a parameter. As that would contain two state for that method, where in you should've just created 2 methods instead of passing a boolean.
+
+And there shouldn't be any output arguments. I'm actually kinda confused what output arguments is. I need to clarify it with someone knowledge, but from my understanding it is an argument in a function where in it is also the one being returned.
+
+E.i
+
+```java
+
+outputArguments(String sample) {
+    return sample;
+}
+```
