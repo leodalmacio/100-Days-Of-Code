@@ -1454,12 +1454,12 @@ Thoughts: Today I've managed to finish the Episode 3 of clean code. I'm still am
 
 As for today I've learned if a function is very large, more likely than not, that is a class that is hidden on a large function. That's why you need to refactor it. Before refactoring, make sure to create test cases so you would be sure that you didn't break anything. I've also learned that for a function to do only one thing, you should extract and extract the function, until the implementation would not just be a restatement of it's name.
 
-### Day 6(27) (August 19, 2019 - Monday)
+### Day 7(28) (August 20, 2019 - Tuesday)
 
 *__Goals for the week__*
 1. ~~Modules~~
 2. ~~Naming And Functions (Clean Code)~~
-3. ~~Function Structure~~
+3. Function Structure
 
 ---
 
