@@ -15,7 +15,7 @@ So, for now that's what I can think about, so good luck with the second attempt.
 1. Improve upon what you've learned about Annotations, specially Marker Annotation
 2. Go beyod the basics of Generics
 
-## Month 1 (July 24, 2019 - August 22, 2019)
+## Month 1 (July 24, 2019 - August 20, 2019)
 
 *__Goals__*
 
@@ -1480,3 +1480,25 @@ outputArguments(String sample) {
     return sample;
 }
 ```
+
+## Month 1 (August 21, 2019 - September ??, 2019)
+
+So somehow, I've managed to finish a month of this. and I've also manage to finish my main goal the Beginner Java book, and also managed to finish some extra goals. Like the Firebase - Firestore, PWA, and also a few episode on Clean Code. Hopefully we can continue this one and finish this 100 days of code.
+
+*__Goals__*
+
+1. Clean Code
+
+### Month 2 Week 1
+
+*__Goals for the week__*
+1. Function Structure
+2. Form
+3. Test Driven Development
+4. Architecture Use Cases and High Level Designs
+
+### Day 1(29) (August 21, 2019 - Wednesday)
+
+Thoughts: For today I've read the book from Clean Code, and I'm quite conflicted on whether I would continue with the book or the video, as the book seems to have some problems that I can try to solve. Or maybe I can just do them concurrently, hopefully that would be better.
+
+I've manage to finish the screen cast of Uncle Bob regarding the stepdown rule. And he explains that he is having a dilemma, as he really wants to indent those child functions so that there are alot more information being given. But it's not a convention and that's why he's having a dilemma. But for me it seems like the idea was really good. Hopefully there would be a functionality like that, even just for the IDE.
