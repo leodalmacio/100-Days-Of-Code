@@ -1497,8 +1497,19 @@ So somehow, I've managed to finish a month of this. and I've also manage to fini
 3. Test Driven Development
 4. Architecture Use Cases and High Level Designs
 
-### Day 1(29) (August 21, 2019 - Wednesday)
+### Day 1(29) (August 22, 2019 - Wednesday)
 
 Thoughts: For today I've read the book from Clean Code, and I'm quite conflicted on whether I would continue with the book or the video, as the book seems to have some problems that I can try to solve. Or maybe I can just do them concurrently, hopefully that would be better.
 
 I've manage to finish the screen cast of Uncle Bob regarding the stepdown rule. And he explains that he is having a dilemma, as he really wants to indent those child functions so that there are alot more information being given. But it's not a convention and that's why he's having a dilemma. But for me it seems like the idea was really good. Hopefully there would be a functionality like that, even just for the IDE.
+
+
+### Day 2 (30) (August 24, 2019, Saturday)
+
+Thoughts: I've learned about two Programming Paradigms, the Functional and the Structured. The Functional paradigm  writes program w/o statements and values are passed as an arguments. Thus, eliminatin side effects??? But side effects must not be eliminated, they should just be managed properly with discipline. With the use of Command Query Separation. In Command Query Separation, functions that modifies a value should not return a state. Functions that returns state should not mutate/modify a state. Thus preventing side effects, such as, maybe calling getAmount() but that getAmount was implemented in a way that modifies a state.
+
+With that I've learned about Tell Don't Ask, you will just tell a function what to do, but don't ask for it's state, because we aren't the one who would manage it's state, the object can sufficiently manage its own state.
+
+I've also learn about Law of Demeter. The Law of Demeter states that, you should only call methods of objects that are, global, passed as an arguments, locally declared and instance variables. BUT NOT METHODS OF OBJECTS THAT ARE RETURNED FROM A PREVIOUS METHOD CALL (```o.getX().getY().getZ().doSomething();```).
+
+I've managed to finish the video, BUT I think I might need to repeat the episode because there are somethings that I still don't understand. Specially the lesson after the Structured Programming.
