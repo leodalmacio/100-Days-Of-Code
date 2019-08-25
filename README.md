@@ -1497,7 +1497,7 @@ So somehow, I've managed to finish a month of this. and I've also manage to fini
 3. Test Driven Development
 4. Architecture Use Cases and High Level Designs
 
-### Day 1(29) (August 22, 2019 - Wednesday)
+### Day 1(29) (August 21, 2019 - Wednesday)
 
 Thoughts: For today I've read the book from Clean Code, and I'm quite conflicted on whether I would continue with the book or the video, as the book seems to have some problems that I can try to solve. Or maybe I can just do them concurrently, hopefully that would be better.
 
