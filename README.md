@@ -1513,3 +1513,7 @@ With that I've learned about Tell Don't Ask, you will just tell a function what 
 I've also learn about Law of Demeter. The Law of Demeter states that, you should only call methods of objects that are, global, passed as an arguments, locally declared and instance variables. BUT NOT METHODS OF OBJECTS THAT ARE RETURNED FROM A PREVIOUS METHOD CALL (```o.getX().getY().getZ().doSomething();```).
 
 I've managed to finish the video, BUT I think I might need to repeat the episode because there are somethings that I still don't understand. Specially the lesson after the Structured Programming.
+
+### Day 3 (31) (August 25, 2019, Sunday)
+
+Thoughts: I've rewatched the video of uncle bob creating a code from scratch. I've got a glimpse on how to properly do a TDD. And also learned that you should do errors first before proceeding with the code. I've also seen Uncle Bob implement the null object pattern, where in instead of throwing an error when requesting for a null, you would return an object with it's own null implementation. But I still don't understand it's use. Uncle Bob says that the purpose is that when you push to a stack it would return an overflow, if you pop it would return an underflow. But I don't know its uses. But I think the reason he made that so he can separate the null if scenarios on a different object instead of clugging the push and pop of the main object. But I would still rewatch this for 3rd time, I still have something that I still quite don't understand. Hopefully I can finish it.
