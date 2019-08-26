@@ -1517,3 +1517,14 @@ I've managed to finish the video, BUT I think I might need to repeat the episode
 ### Day 3 (31) (August 25, 2019, Sunday)
 
 Thoughts: I've rewatched the video of uncle bob creating a code from scratch. I've got a glimpse on how to properly do a TDD. And also learned that you should do errors first before proceeding with the code. I've also seen Uncle Bob implement the null object pattern, where in instead of throwing an error when requesting for a null, you would return an object with it's own null implementation. But I still don't understand it's use. Uncle Bob says that the purpose is that when you push to a stack it would return an overflow, if you pop it would return an underflow. But I don't know its uses. But I think the reason he made that so he can separate the null if scenarios on a different object instead of clugging the push and pop of the main object. But I would still rewatch this for 3rd time, I still have something that I still quite don't understand. Hopefully I can finish it.
+
+
+### Day 4 (32) (August 26, 2019, Monday)
+
+Thoughts: Today, I've watched the Episode 5 of Clean Code - Form. For now I've learned about commenting. Commenting shouldn't be something to be avoided, it should just be rare, you would comment because you have to, not because you needed to. If a comment becomes common, it becomes useless.
+
+I've also learned another reason why a comment must be avoided. It's becauase if you need to comment then the code and the commment may provide two different process thoughts, which would disrupt the reader, and slows down the understanding of the code.  And only by reading the code, can the programmer be sure, what the code does.
+
+EVERY COMMENT YOU WRITE, IS A FAILURE TO EXPRESS YOURSELF INTO CODE.
+
+But even Uncle Bob, also write a comment. It's an acknowledgement of his failure to express his self to code. So remember that.
