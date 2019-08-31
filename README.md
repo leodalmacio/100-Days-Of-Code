@@ -1528,3 +1528,7 @@ I've also learned another reason why a comment must be avoided. It's becauase if
 EVERY COMMENT YOU WRITE, IS A FAILURE TO EXPRESS YOURSELF INTO CODE.
 
 But even Uncle Bob, also write a comment. It's an acknowledgement of his failure to express his self to code. So remember that.
+
+### Day 5 (33) (August 31, 2019, Saturday)
+
+Thoughts: I'm actually starting to forget what I've learned previously. It's quite frustrating, as I've rewatched some of the videos that I've previously watch just to recall what I've learned previously. The mind map does help, but I guess I might need more. I guess I'll try installing an Anki and see how my study would proceed with that one.
